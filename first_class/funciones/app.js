@@ -25,7 +25,7 @@ let greetMe = () => console.log('Hello from the function expression');
 greetMe();
 
 logGreeting(greetMe);
-//functions are first class, pass it as a parameter
+//functions are first class, pass it as a parameter.
 
 
 
