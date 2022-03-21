@@ -1,12 +1,14 @@
-var Emitter = require('./emitter');
+// var Emitter = require('./emitter');
+var Emitter = require('events'); // Se crea una instancia del objeto que hay en "events".
 
+const config = require('./config'); //Se inyecta la dependencia.
 var emtr = new Emitter();
 
-emtr.on('greet', () => {
+emtr.on(config.events.GREET, () => { //Ahora utilizamos el concepto de las "magic strings" para llamar a la funcion.
     console.log('Somewhere, someone said hello.');
 });
 
-emtr.on('greet', () => {
+emtr.on(config.events.GREET, () => {
     console.log('A greeting occurred!');
 });
 
