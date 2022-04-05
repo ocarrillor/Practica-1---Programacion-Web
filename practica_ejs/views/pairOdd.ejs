@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link href="/assets/style.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <% if (ID % 2 == 0) { %> <!--Evalua el valor de ID para saber si es par.-->
+            <ul>
+                <%for (let i = 0; i < ID*2; i++) {%> <!--Un ciclo for que imprime el elemento hasta ID*2 de veces.-->
+                    <li> ES PAR </li>
+                <%}%>
+            </ul>
+        <%} else{ %> <!--En caso de que no sea par.-->
+            <ul>
+                <%for (let i = 0; i < ID; i++) {%> <!--Un ciclo for que imprime el elemento hasta ID de veces.-->
+                    <li> ES IMPAR </li>
+                <%}%>
+            </ul>
+        <% } %>
+    </body>
+</html>
