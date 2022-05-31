@@ -10,4 +10,18 @@ router.get('/persons', function(req, res, next) {
     });
 });
 
+router.get('/person', function (req, res) {
+    res.render('person');
+});
+
+router.post('/addPerson', function(req, res) {
+    // console.log(req.body);
+    const myPerson = new Person({
+        nombre: req.body.nombre,
+        edad: req.body.edad,
+        tipoSangre: req.body.tipoSangre,
+        nss: req.body.nss }); // crea la entidad
+        myPerson.save(); // guarda en bd
+});
+
 module.exports=router;
