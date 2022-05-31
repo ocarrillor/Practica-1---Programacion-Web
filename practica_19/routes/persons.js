@@ -6,12 +6,17 @@ let Person = require('../models/person');
 router.get('/persons', function(req, res, next) {
     Person.find(function (err, persons) {
         if (err) return next(err);
-        res.json(persons);
+        //res.json(persons);
+        res.render('personsIndex',{persons})
     });
 });
 
 router.get('/person', function (req, res) {
     res.render('person');
+});
+
+router.get('/main', function (req, res) {
+    res.render('main');
 });
 
 router.post('/addPerson', function(req, res) {
